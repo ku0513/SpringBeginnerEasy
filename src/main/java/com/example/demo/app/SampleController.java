@@ -15,7 +15,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/sample")
 public class SampleController {
-	
+
  	private final JdbcTemplate jdbcTemplate;
 
  	//Add an annotation here
@@ -23,10 +23,10 @@ public class SampleController {
  	public SampleController(JdbcTemplate jdbcTemplate) {
  		this.jdbcTemplate = jdbcTemplate;
  	}
-	
+
 	@GetMapping("/test")
 	public String test(Model model) {
-		
+
 		//hands-on
 		String sql = "SELECT id, name, email " + "FROM inquiry WHERE id = 1";
 		Map<String, Object> map = jdbcTemplate.queryForMap(sql);
@@ -37,5 +37,4 @@ public class SampleController {
 
 		return "test";
 	}
-
 }

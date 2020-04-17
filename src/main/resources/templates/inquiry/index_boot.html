@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title th:text="${title}">Starter Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
@@ -24,7 +24,7 @@
 
       <div class="starter-template">
         <h1 th:text="${title}">Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<!--        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>-->
       </div>
       
 <table class="table table-striped">
@@ -39,11 +39,11 @@
   </thead>
   <tbody>
     <tr th:each="inquiry : ${inquiryList}">
-      <td  scope="row" th:text="${inquiry.id}">Mark</td>
-      <td th:text="${inquiry.name}">Otto</td>
-      <td th:text="${inquiry.email}">@mdo</td>
-      <td th:text="${inquiry.contents}">Otto</td>
-      <td th:text="${inquiry.created}">@mdo</td>
+      <th scope="row" th:text="${inquiry.id}">1</th>
+      <td th:text="${inquiry.name}">name</td>
+      <td th:text="${inquiry.email}">email</td>
+      <td th:text="${inquiry.contents}">contents</td>
+      <td th:text="${inquiry.created}">create</td>
     </tr>
 
   </tbody>

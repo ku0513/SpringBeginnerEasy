@@ -11,7 +11,7 @@ public interface InquiryService {
 	
 //  This is used in the latter chapter
 //  こちらは後で使用
-//	void update(Inquiry inquiry);
+	void update(Inquiry inquiry);
 	
 	List<Inquiry> getAll();
 

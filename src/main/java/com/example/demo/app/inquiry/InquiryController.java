@@ -40,24 +40,45 @@ public class InquiryController {
         //hands-on
         List<Inquiry> list = inquiryService.getAll();
 
+//        Inquiry inquiry = new Inquiry();
+//        inquiry.setId(4);
+//        inquiry.setName("Jamie");
+//        inquiry.setEmail("sample4@example.com");
+//        inquiry.setContents("Hello");
+
+//        try {
+//            inquiryService.update(inquiry);
+//        } catch (InquiryNotFoundException e) {
+//            model.addAttribute("message", e);
+//            return "error/CustomPage";
+//        }
+
+//        inquiryService.update(inquiry);
+
         model.addAttribute("inquiryList", list);
         model.addAttribute("title", "Inquiry Index");
 
-        return "inquiry/index";
+        return "inquiry/index_boot";
     }
+
+//    @ExceptionHandler(InquiryNotFoundException.class)
+//    public String handleException(InquiryNotFoundException e, Model model) {
+//        model.addAttribute("message", e);
+//        return "error/CustomPage";
+//    }
 
     @GetMapping("/form")
     public String form(InquiryForm inquiryForm,
                        Model model,
                        @ModelAttribute("complete") String complete) {
         model.addAttribute("title", "Inquiry Form");
-        return "inquiry/form";
+        return "inquiry/form_boot";
     }
 
     @PostMapping("/form")
     public String formGoBack(InquiryForm inquiryForm, Model model) {
         model.addAttribute("title", "Inquiry Form");
-        return "inquiry/form";
+        return "inquiry/form_boot";
     }
 
 
@@ -67,13 +88,13 @@ public class InquiryController {
 						  Model model) {
     	if (result.hasErrors()) {
     		model.addAttribute("title", "Inquiry Form");
-    		return "inquiry/form";
+    		return "inquiry/form_boot";
 		}
 
     	model.addAttribute("title", "Confirm Paga");
         //hands-on
 
-        return "inquiry/confirm";
+        return "inquiry/confirm_boot";
     }
 
     @PostMapping("/complete")
@@ -84,7 +105,7 @@ public class InquiryController {
         //hands-on
         if (result.hasErrors()) {
             model.addAttribute("title", "Inquiry Form");
-            return "inquiry/form";
+            return "inquiry/form_boot";
         }
 
         Inquiry inquiry = new Inquiry();

@@ -13,10 +13,10 @@
 	</tr>
 	<tr th:each="inquiry : ${inquiryList}">
 		<td th:text="${inquiry.id}">1</td>
-		<td th:text="${inquiry.name}"></td>
-		<td th:text="${inquiry.email}"></td>
-		<td th:text="${inquiry.contents}"></td>
-		<td th:text="${inquiry.created}"></td>
+		<td th:text="${inquiry.name}">name</td>
+		<td th:text="${inquiry.email}">email</td>
+		<td th:text="${inquiry.contents}">contents</td>
+		<td th:text="${inquiry.created}">create</td>
 	</tr>
 </table>
 </body>
